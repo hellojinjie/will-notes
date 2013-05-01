@@ -1,0 +1,30 @@
+
+So I now have a Retina MacBook Pro, named iris after Iris Murdoch.  All my laptops have been named after 20th/21st century philosophers: 
+
+| gottlob | Gottlob Frege       | 
+| ludwig  | Ludwig Wittgenstein | MacBook Pro
+| willard | W. V. O. Quine      |
+| slavoj  | Slavoj Žižek        | MacBook Pro unibody
+| iris    | Iros Murdoch        |
+
+* Software to install on a new Mac
+
+** Inital stages - App store, Dropbox, 1Password
++ Apps from the App Store are easy
+  + Just log on with your Apple ID and get them from the App Store app. 
+** Python 
+** Fonts
+*** Courier Prime
++ http://quoteunquoteapps.com/courierprime/
++ This font was designed for writing movie scripts, but it is a great general-purpose monospace font.
++ It comes with regular, /italic/, *bold*, and /*bold italic*/ versions. 
++ It is much more robust looking than the standard Courier, which always looked too spindly to me.
++ On a retina display, it is perfectly legible as small as 9 pt, although you probably want it bigger than that.
+** Utilities
+*** Moom - Window Control
+*** Mailplane
+*** 1Password
+
+** Consumer software
+
+** Astrophysics
