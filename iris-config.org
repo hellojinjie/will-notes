@@ -34,7 +34,25 @@ export VIRTUAL_ENV_DISABLE_PROMPT=y
     easy_install pip
     pip install astropy
     pip install elpy
+    pip install rope
+    pip install jedi
+    pip install pyregion
   #+END_SRC
++ Some need to be built from source
+  + [X] scikit-image was problematic
+    + Canopy had version 0.5 for some reason, which is wat to old (didn't have =morpholoy.dilate=, which I use a lot. 
+    + The latest version on pypi was 0.8, but this seems to have a bug
+    + So grab latest dev version (0.9dev at time of writing)
+      #+BEGIN_SRC sh
+        cd ~/Source
+        git clone http://github.com/scikit-image/scikit-image.git
+      #+END_SRC
+      And build and install it
+      #+BEGIN_SRC sh
+        cd ~/Source/scikit-image
+        python setup.py build
+        python setup.py install
+      #+END_SRC
 ** Fonts
 *** Courier Prime
 + http://quoteunquoteapps.com/courierprime/
