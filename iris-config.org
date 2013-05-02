@@ -1,11 +1,15 @@
 
 So I now have a Retina MacBook Pro, named iris after Iris Murdoch.  All my laptops have been named after 20th/21st century philosophers: 
 
-| gottlob | Gottlob Frege       | 
-| ludwig  | Ludwig Wittgenstein | MacBook Pro
-| willard | W. V. O. Quine      |
-| slavoj  | Slavoj Žižek        | MacBook Pro unibody
-| iris    | Iros Murdoch        |
+| name    | philosopher         | machine             |
+|---------+---------------------+---------------------|
+| gottlob | Gottlob Frege       | IBM Thinkpad        |
+| ludwig  | Ludwig Wittgenstein | PowerBook G4        |
+| bert    | Bertrand Russell    | MacBook Pro         |
+| willard | W. V. O. Quine      | iMac                |
+| slavoj  | Slavoj Žižek        | MacBook Pro unibody |
+| iris    | Iros Murdoch        | Retina MacBook Pro  |
+|         |                     |                     |
 
 * Software to install on a new Mac
 
@@ -13,6 +17,24 @@ So I now have a Retina MacBook Pro, named iris after Iris Murdoch.  All my lapto
 + Apps from the App Store are easy
   + Just log on with your Apple ID and get them from the App Store app. 
 ** Python 
++ Install Enthought's Canopy distribution
+  + https://www.enthought.com/products/canopy/
+  + Get 64-bit version
+  + Free Academic License (requires registration using an academic email address) 
++ Run Canopy.app to set up as default python installation
+  + This adds a line to =~/.profile= that sources their activation script
+  + By default it esses with your prompt.  To fix this, add the following line to =~/.profile=
+    #+BEGIN_SRC sh
+# Stop Canopy from messing with $PS1
+export VIRTUAL_ENV_DISABLE_PROMPT=y
+    #+END_SRC
++ Use package manager ro install all Canopy packages
++ Other packages need to be installed by hand
+  #+BEGIN_SRC sh
+    easy_install pip
+    pip install astropy
+    pip install elpy
+  #+END_SRC
 ** Fonts
 *** Courier Prime
 + http://quoteunquoteapps.com/courierprime/
