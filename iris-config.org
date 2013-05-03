@@ -67,4 +67,85 @@ export VIRTUAL_ENV_DISABLE_PROMPT=y
 
 ** Consumer software
 
+** System software
+
+*** rsync
++ OS X already has rsync, but it is version 2.6.9 from 2008!
+  + In particular, it doesn't copy extended attributes properly
+  + This is important since I don't want to lose any metadata when I copy over files from my old laptop.
++ So I install the latest version via homebrew:
+  #+BEGIN_SRC sh
+brew tap homebrew/dupes
+brew info libiconv
+brew install homebrew/dupes/libiconv
+brew install homebrew/dupes/rsync
+  #+END_SRC
++ Note that to use it, it is necessary to give the full path, since =/usr/bin= is before =/usr/local/bin= in y =$PATH=
+  #+BEGIN_SRC sh :results verbatim 
+rsync --version
+  #+END_SRC
+
+  #+RESULTS:
+  #+BEGIN_EXAMPLE
+  rsync  version 2.6.9  protocol version 29
+  Copyright (C) 1996-2006 by Andrew Tridgell, Wayne Davison, and others.
+  <http://rsync.samba.org/>
+  Capabilities: 64-bit files, socketpairs, hard links, symlinks, batchfiles,
+                inplace, IPv6, 64-bit system inums, 64-bit internal inums
+  
+  rsync comes with ABSOLUTELY NO WARRANTY.  This is free software, and you
+  are welcome to redistribute it under certain conditions.  See the GNU
+  General Public Licence for details.
+  #+END_EXAMPLE
+ 
+  #+BEGIN_SRC sh :results verbatim 
+/usr/local/bin/rsync --version
+  #+END_SRC
+
+  #+RESULTS:
+  #+begin_example
+  rsync  version 3.0.9  protocol version 30
+  Copyright (C) 1996-2011 by Andrew Tridgell, Wayne Davison, and others.
+  Web site: http://rsync.samba.org/
+  Capabilities:
+      64-bit files, 64-bit inums, 64-bit timestamps, 64-bit long ints,
+      socketpairs, hardlinks, symlinks, IPv6, batchfiles, inplace,
+      append, ACLs, xattrs, iconv, symtimes, file-flags
+
+  rsync comes with ABSOLUTELY NO WARRANTY.  This is free software, and you
+  are welcome to redistribute it under certain conditions.  See the GNU
+  General Public Licence for details.
+  #+end_example
+
+
 ** Astrophysics
+
+
+* [0/3] Transferring my files from slavoj
++ [-] I decided not just to copy over everything blindly with the migration assistant.
+  + I did actually try to use Migration Assistant to copy over my just my home directory, but it was going to take 4 hours (even over thunderbolt) and there is no way of suspending it halfway through and resuming.
+  + [-] I need to find out where it was writing its files and delete them, since I am pretty sure that it didn't clean up
+    + [-] Run DaisyDisk to find big folders
++ [ ] Instead I am using rsync to copy my home directory
+  + I tried it over the network, but that didn't work
+  + But it works fine with the old laptop connected via thunderbolt in "Target Disk Mode".
+  + Command options used:
+    #+BEGIN_SRC sh
+    rsync -avPX 
+    #+END_SRC
+  + [1/9] Folders I am copying over (in order of last access date)
+    + [X] ~/Admin/ very small
+    + [-] ~/Work/ pretty big (176 GB)
+    + [ ] ~/Documents
+      + [ ] Do I really want all of this?
+      + Certainly want Web Receipts
+    + [ ] ~/Source
+    + [ ] ~/bin
+      + Mostly junk, but some useful things
+    + [ ] ~/Teaching
+    + [ ] ~/RMAA
+    + [ ] *Hidden folders*
+      + [ ] Need to check these in dired or terminal since they don't show up in Finder
+    + [ ] 
++ [ ] How to deal with iTunes Library?
+  + [ ] Probably best to temporarily set the Library file in iTunes to be the old laptop's iTunes Library, and then do "Consolidate Library"
