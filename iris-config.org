@@ -121,11 +121,13 @@ rsync --version
 ** Astrophysics
 
 
-* [0/3] Transferring my files from slavoj
-+ [-] I decided not just to copy over everything blindly with the migration assistant.
+* [1/3] Transferring my files from slavoj
++ [X] I decided not just to copy over everything blindly with the migration assistant.
   + I did actually try to use Migration Assistant to copy over my just my home directory, but it was going to take 4 hours (even over thunderbolt) and there is no way of suspending it halfway through and resuming.
-  + [-] I need to find out where it was writing its files and delete them, since I am pretty sure that it didn't clean up
-    + [-] Run DaisyDisk to find big folders
+  + [X] I need to find out where it was writing its files and delete them, since I am pretty sure that it didn't clean up
+    + [X] Run DaisyDisk to find big folders
+    + [X] Turns out that it did clean up after all
+      + The only large system folder (18GB) contains the sleep image
 + [ ] Instead I am using rsync to copy my home directory
   + I tried it over the network, but that didn't work
   + But it works fine with the old laptop connected via thunderbolt in "Target Disk Mode".
@@ -133,9 +135,10 @@ rsync --version
     #+BEGIN_SRC sh
     rsync -avPX 
     #+END_SRC
-  + [1/9] Folders I am copying over (in order of last access date)
+  + [2/9] Folders I am copying over (in order of last access date)
     + [X] ~/Admin/ very small
-    + [-] ~/Work/ pretty big (176 GB)
+    + [X] ~/Work/ pretty big (176 GB)
+      + All copied [2013-05-03 Fri 11:35]
     + [ ] ~/Documents
       + [ ] Do I really want all of this?
       + Certainly want Web Receipts
