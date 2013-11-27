@@ -67,6 +67,22 @@ export VIRTUAL_ENV_DISABLE_PROMPT=y
 
 ** Consumer software
 
+
+** Drawing/painting software
+
+*** Inkscape
++ [X] Installing via homebrew
+*** iDraw
++ [X] Installed on iris
++ [X] Installed on iPad
+**** Review of iDraw
++ PDF import works well on Mac, less well on iPad
++ Gradient editor seems missing features - no way to move the center of radial gradients
++ Export to PDF on Mac loses transparency in gradient fill - but export to SVG and PNG works fine
+  + Exported SVG can be imported losslessly into Inkscape and there exported to PDF with the transparency intact.
+    + [2013-11-27 Wed] Actually, I am not sure that is true.
+      + I remember it not working so well with my LL figures
+
 ** System software
 
 *** rsync
@@ -183,5 +199,9 @@ CLOSED: [2013-05-16 Thu 16:35]
     + [ ] *Hidden folders*
       + [ ] Need to check these in dired or terminal since they don't show up in Finder
     + [ ] 
-+ [ ] How to deal with iTunes Library?
-  + [ ] Probably best to temporarily set the Library file in iTunes to be the old laptop's iTunes Library, and then do "Consolidate Library"
++ [-] How to deal with iTunes Library?
+  + [X] Transferred to Mac Mini
+  + [-] Synched to new iphone
+    + [X] Most of the stuff
+    + [ ] Some things missing (Deap Vally, ZZ Top, Vaselines)
+      + They are definitely there on slavoj?  Need to check if they are on Mac Mini
