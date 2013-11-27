@@ -1,0 +1,16 @@
+Useful snippets on how to do stuff
+
+* Stashing/rebasing with git                                      :emacs:git:
+This is a very common occurence for me. 
++ You may have some local commits, plus some uncommited changes and untracked files
++ You want to pull in someone else's changes and carry on working
+** Magit version
++ Stash all your uncommited work: =z -u z=, then type name of stash
++ Fetch other people's new commits: =f f=
++ [Optional] Rebase your un-pushed commits, if any: =R=
++ Pop your stash: =A= with point on the line showing the stash in question
+** Raw git version
++ =git stash save -u=
++ =git fetch=
++ =git rebase refs/remotes/origin/master=
++ =git stash pop= 
