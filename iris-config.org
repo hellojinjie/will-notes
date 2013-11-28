@@ -169,7 +169,7 @@ CLOSED: [2013-05-16 Thu 16:35]
 + But only runs when started from the installation directory
 
 
-* [1/3] Transferring my files from slavoj
+* [1/4] Transferring my files from slavoj
 + [X] I decided not just to copy over everything blindly with the migration assistant.
   + I did actually try to use Migration Assistant to copy over my just my home directory, but it was going to take 4 hours (even over thunderbolt) and there is no way of suspending it halfway through and resuming.
   + [X] I need to find out where it was writing its files and delete them, since I am pretty sure that it didn't clean up
@@ -205,3 +205,12 @@ CLOSED: [2013-05-16 Thu 16:35]
     + [X] Most of the stuff
     + [ ] Some things missing (Deap Vally, ZZ Top, Vaselines)
       + They are definitely there on slavoj?  Need to check if they are on Mac Mini
++ [ ] Dealing with the iPhoto Library
+  + Again, moving it to Mac Mini might be the best bet
+  + [ ] Do we need to merge any libraries?
+    + Or can we simply copy slavoj's library to Mac Mini for the bulk of stuff
+    + And deal with any extras by exporting to folders and re-importing
+      + Note that export/import does not preserve metadata
+      + And iPhoto does not support true merges of libraries, although there are other programs that do:
+        + Aperture (cost: $1049 MXN from Mac app store)
+        + iPhoto Library Manager (cost: $30 USD from [[http://www.fatcatsoftware.com/iplm/][here]])
