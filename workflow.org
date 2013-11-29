@@ -13,4 +13,29 @@ This is a very common occurence for me.
 + =git stash save -u=
 + =git fetch=
 + =git rebase refs/remotes/origin/master=
-+ =git stash pop= 
++ =git stash pop=
+
+* Including movies in PDF files from LaTeX                            :latex:
+
+* Viewing "Tab-separated value" data files in emacs            :emacs:cloudy:
++ =M-x tsv-mode= turns on a [[https://github.com/emacsmirror/tsv-mode/blob/master/tsv-mode.el][nice mode]] by Ye Wenbin, which is very useful for perusing Cloudy output and other tab-delimited files
++ I have the following in my set-up, which means that the column names always appear at the top in a bar, even when you scroll down the file
+#+BEGIN_SRC lisp
+(add-hook 'tsv-mode-hook
+	  (lambda ()
+	    ;; Use the first line to define the column names
+	    (tsv-first-line-as-header)
+	    ))
+#+END_SRC
++ Without that, it just says "col1", "col2", etc
+** Useful keybindings
++ =TAB=/=S-TAB=: next/previous field
++ =H=/=S=: hide/show column (not sure how to reveal all)
++ =<=/=>=: narrow/widen column
++ =C-c C-n=/=C-c C-w=: set width of this/all columns
++ =s=/=w=/=RET=: show/copy/edit field at point
+** Things that need fixing
++ Main problem is with the header columns. These do adapt to resizing the columns, but there are other circumstances, where they will get misaligned:
+  + If the full table width does not fit on the screen, then the header columns do not move when you scroll horizontally
+  + If you resize the text font (e.g., with trackpad gestures =magnify-up=, =magnify-down=), then the header font does not change, and so the columns do not align
+
